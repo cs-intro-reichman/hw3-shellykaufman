@@ -67,6 +67,7 @@ public class Algebra {
 				for(int i = 0; i < x2; i++){
 					sum = plus(sum, x1);
 				}
+				sum = minus(0, sum);
 			}
 			if(x1 < 0){
 				x1 = minus(0, x1);
