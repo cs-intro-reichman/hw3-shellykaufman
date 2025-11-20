@@ -34,11 +34,8 @@ public class Anagram {
 			return false;
 		}
 		for(int i = 0; i < str1.length(); i++){
-			String str3 = " ";
+			String str3 = "";
 			for(int j = 0; j < str2.length(); j++){
-				if(str1.charAt(i) == ' '){
-					break;
-				}
 				if(str1.charAt(i) != str2.charAt(j)){
 					str3 = str3 + str2.charAt(j);
 				}
@@ -46,7 +43,7 @@ public class Anagram {
 					str2 = str3 + str2.substring(j + 1);
 					break;
 				}		
-				if(j == str2.length()){
+				if(j == str2.length() - 1){
 					return false;
 				}
 
