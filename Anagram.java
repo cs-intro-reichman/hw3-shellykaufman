@@ -66,7 +66,7 @@ public class Anagram {
 		char ch;
 		for(int i = 0; i< lengthSTR; i++){
 			ch = str.charAt(i);
-			isLetter = Character.isLetter(ch);
+			isLetter = Character.isLetter(ch) || ch == ' ';
 			if(isLetter){
 				NewStr = NewStr + ch;
 			}
