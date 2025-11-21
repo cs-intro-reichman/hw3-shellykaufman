@@ -30,29 +30,17 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
-		String str3 = str2;
-
-		if(str1.length() != str2.length()){
-			return false;
-		}
-
-		for(int i = 0; i < str1.length(); i++){
-			if(str1.charAt(i) == ' '){
-				continue;
+		int i = 0;
+		for(int j = 0; j < str1.length(); j++){
+			if(str1.charAt(i) != ' '){
+			while (str1.charAt(i) != str2.charAt(j)) {
+				j++;
+				if (j == str1.length()){
+					return false;
+				} 
 			}
-			boolean have = false;
-
-			for(int j = 0; j < str3.length(); j++){
-				if(str1.charAt(i) == str3.charAt(j)){
-					str3 = str3.substring(0, j) + str3.substring(j + 1);
-					have = true;
-					break;
-				}		
-				
 			}
-			if(!have){
-				return false;
-				}
+			i = 0;
 		}
 		return true;
 	}
