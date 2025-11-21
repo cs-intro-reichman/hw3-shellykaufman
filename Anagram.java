@@ -37,11 +37,12 @@ public class Anagram {
 		}
 
 		for(int i = 0; i < str1.length(); i++){
+			if(str1.charAt(i) == ' '){
+				continue;
+			}
 			boolean have = false;
 
 			for(int j = 0; j < str3.length(); j++){
-				if(str1.charAt(i) != str3.charAt(j)){
-				}
 				if(str1.charAt(i) == str3.charAt(j)){
 					str3 = str3.substring(0, j) + str3.substring(j + 1);
 					have = true;
