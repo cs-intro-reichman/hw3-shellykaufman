@@ -30,15 +30,16 @@ public class Anagram {
 	public static boolean isAnagram(String str1, String str2) {
 		str1 = preProcess(str1);
 		str2 = preProcess(str2);
+		if(str1.length() != str2.length()){
+			return false;
+		}
 		int i = 0;
 		for(int j = 0; j < str1.length(); j++){
-			if(str1.charAt(i) != ' '){
 			while (str1.charAt(i) != str2.charAt(j)) {
 				j++;
 				if (j == str1.length()){
 					return false;
 				} 
-			}
 			}
 			i = 0;
 		}
@@ -49,18 +50,16 @@ public class Anagram {
 	// to lower-case, and all the other characters are deleted, except for spaces, which are left
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
+		str = str.toLowerCase();
 		int lengthSTR = str.length();
 		String NewStr = "";
 		if(lengthSTR == 0){
 			return str;
 		}
-		str = str.toLowerCase();
-		boolean isLetter;
 		char ch;
 		for(int i = 0; i< lengthSTR; i++){
 			ch = str.charAt(i);
-			isLetter = Character.isLetter(ch) || ch == ' ';
-			if(isLetter){
+			if(Character.isLetter(ch)){
 				NewStr = NewStr + ch;
 			}
 		}
